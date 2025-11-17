@@ -400,6 +400,7 @@ function Home({ initialSettings }) {
             "A highly customizable homepage (or startpage / application dashboard) with Docker and service API integrations."
           }
         />
+        {settings.disableIndexing && <meta name="robots" content="noindex, nofollow" />}
         {settings.base && <base href={settings.base} />}
         {settings.favicon ? (
           <>
@@ -425,7 +426,7 @@ function Home({ initialSettings }) {
       <div
         className={classNames(
           settings.fullWidth ? "" : "container",
-          "relative m-auto flex flex-col justify-start z-10 h-full",
+          "relative m-auto flex flex-col justify-start z-10 h-full min-h-screen",
         )}
       >
         <QuickLaunch
